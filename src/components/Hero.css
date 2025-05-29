@@ -1,0 +1,35 @@
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dot {
+  animation: pulse 1.5s linear infinite;
+  height: max-content;
+}
+
+.hero-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgba(0, 255, 0, 0.3);
+  border-radius: 100px;
+  background-color: rgb(58, 117, 0, 0.3);
+  width: fit-content;
+  height: fit-content;
+}
+
+.hero-description p {
+  margin: 0;
+  padding-right: 1rem;
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 1);
+}
