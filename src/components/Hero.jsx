@@ -4,12 +4,16 @@ import { Dot, Mail, Github, Linkedin, ChevronDown } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
+
+    const primaryColor = "var(--primary-color)";
+    const secondaryColor = "var(--secondary-color)";
+
     return (
-        <section className="hero">
+        <section id="hero">
 
             <h1>
                 <GradientText
-                colors={["#2EC5ED", "#7681F2", "#E6489D", "#2EC5ED", "#7681F2", "#E6489D"]}
+                colors={[primaryColor, secondaryColor, primaryColor, secondaryColor]}
                 animationSpeed={5}
                 showBorder={false}
                 className="custom-class"
@@ -54,7 +58,7 @@ const Hero = () => {
 
                 <div className="hero-cta">
                     <a
-                        href="#"
+                        href="#about"
                         className="hero-cta-button"
                     >
                         <ChevronDown color="cyan" size={75}/>
