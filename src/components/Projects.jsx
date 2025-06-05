@@ -118,9 +118,12 @@ const Projects = () => {
                     </div>
                 </div>
                 <div className="img-display">
-                    <div>
-                        <img src={projects[activeProject].image} alt={projects[activeProject].title} />
+                    <div className="mac-window-header">
+                        <span className="mac-dot red"></span>
+                        <span className="mac-dot yellow"></span>
+                        <span className="mac-dot green"></span>
                     </div>
+                    <img src={projects[activeProject].image} alt={projects[activeProject].title} />
                 </div>
             </div>
 
