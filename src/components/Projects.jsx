@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import GradientText from '../blocks/TextAnimations/GradientText/GradientText';
 import { ExternalLink, Github } from 'lucide-react';
 import "./Projects.css";
@@ -8,23 +8,102 @@ const Projects = () => {
     const secondaryColor = "var(--secondary-color)";
 
     const [activeProject, setActiveProject] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const [transitionDirection, setTransitionDirection] = useState('');
+
+    const imgDisplayRef = useRef(null);
+
 
     const handleNextProject = () => {
-        if (activeProject < projects.length - 1) {
-            setActiveProject(activeProject + 1);
-        } else {
-            setActiveProject(0);
+        if (isTransitioning) return;
+
+        const currentTransform = getCurrentTransform();
+        
+        setIsTransitioning(true);
+        setTransitionDirection('next');
+
+        if (imgDisplayRef.current && currentTransform) {
+            imgDisplayRef.current.style.setProperty('--current-transform', currentTransform);
         }
+        
+        setTimeout(() => {
+            if (activeProject < projects.length - 1) {
+                setActiveProject(activeProject + 1);
+            } else {
+                setActiveProject(0);
+            }
+            
+            setTimeout(() => {
+                setIsTransitioning(false);
+                setTransitionDirection('');
+
+                if (imgDisplayRef.current) {
+                    imgDisplayRef.current.style.removeProperty('--current-transform');
+                }
+            }, 50);
+        }, 300);
     }
 
     const handlePreviousProject = () => {
-        if (activeProject > 0) {
-            setActiveProject(activeProject - 1);
+        if (isTransitioning) return;
+
+        const currentTransform = getCurrentTransform();
+        
+        setIsTransitioning(true);
+        setTransitionDirection('prev');
+
+        if (imgDisplayRef.current && currentTransform) {
+            imgDisplayRef.current.style.setProperty('--current-transform', currentTransform);
         }
-        else {
-            setActiveProject(projects.length - 1);
-        }
+        
+        setTimeout(() => {
+            if (activeProject > 0) {
+                setActiveProject(activeProject - 1);
+            } else {
+                setActiveProject(projects.length - 1);
+            }
+            
+            setTimeout(() => {
+                setIsTransitioning(false);
+                setTransitionDirection('');
+
+                if (imgDisplayRef.current) {
+                    imgDisplayRef.current.style.removeProperty('--current-transform');
+                }
+            }, 50);
+        }, 300);
     }
+
+    const getCurrentTransform = () => {
+        if (!imgDisplayRef.current) return null;
+        
+        const computedStyle = window.getComputedStyle(imgDisplayRef.current);
+        const matrix = computedStyle.transform;
+        
+        if (matrix === 'none') {
+            return 'perspective(1200px) rotateX(10deg) rotateY(-20deg) rotateZ(5deg)';
+        }
+        
+        const animationTime = performance.now() % 5000;
+        const progress = animationTime / 5000;
+        
+        let rotateX, rotateY, rotateZ;
+        
+        if (progress <= 0.5) {
+            const t = progress * 2;
+            rotateX = 10 + (15 - 10) * t;
+            rotateY = -20 + (-22 - (-20)) * t;
+            rotateZ = 5 + (8 - 5) * t;
+        } else {
+            const t = (progress - 0.5) * 2;
+            rotateX = 15 + (10 - 15) * t;
+            rotateY = -22 + (-20 - (-22)) * t;
+            rotateZ = 8 + (5 - 8) * t;
+        }
+        
+        return `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
+    }
+
 
     const techsLogos = {
         React: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
@@ -65,6 +144,14 @@ const Projects = () => {
         }
     ];
 
+    const getImageDisplayClass = () => {
+        let className = "img-display";
+        if (isTransitioning) {
+            className += ` transitioning-${transitionDirection}`;
+        }
+        return className;
+    };
+
     return (
         <section id="projects">
             <h1>
@@ -86,15 +173,14 @@ const Projects = () => {
 
                     <div className="techs">
                         {projects[activeProject].techs.map((tech, index) => (
-                            <div>
+                            <div key={index}>
                                 <img
-                                    key={index}
                                     src={techsLogos[tech]}
                                     alt={tech}
                                     className="tech-logo"
                                 />
 
-                                <span key={index} className="tech-item">
+                                <span className="tech-item">
                                     {tech}
                                 </span>
                             </div>
@@ -117,7 +203,7 @@ const Projects = () => {
                             )}
                     </div>
                 </div>
-                <div className="img-display">
+                <div className={getImageDisplayClass()} ref={imgDisplayRef}>
                     <div className="mac-window-header">
                         <span className="mac-dot red"></span>
                         <span className="mac-dot yellow"></span>
