@@ -17,7 +17,8 @@
     min-width: 30%;
     max-width: 85%;
     margin: 0 auto;
-    border: 1px solid var(--primary-color);
+    border: #2574fc37 2px solid;
+    border-radius: 1rem;
     padding: 20px;
     background-color: rgba(0, 0, 128, 0.1);
 }
@@ -49,9 +50,10 @@
 }
 
 .site-link:hover {
-    background-color: color-mix(in srgb, var(--primary-color) 70%, black);
+    background-color: rgb(73, 73, 73);
     color: white;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .code-link {
@@ -69,9 +71,10 @@
 }
 
 .code-link:hover {
-    background-color: color-mix(in srgb, var(--secondary-color) 70%, black);
+    background-color: rgb(73, 73, 73);
     color: white;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .techs {
@@ -87,7 +90,7 @@
     justify-content: center;
     gap: 0.5rem;
     background-color: rgba(0, 0, 128, 0.1);
-    border: 1px solid var(--primary-color);
+    border: 1px solid #2574fc37;
     color: white;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
@@ -236,4 +239,45 @@
 .nav-button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+.project-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-indicators 
+.indicator {
+    transition: opacity 0.2s ease;
+}
+
+.project-indicators 
+.indicator:hover {
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.project-indicator-item {
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
+}
+
+.active {
+    opacity: 1;
 }

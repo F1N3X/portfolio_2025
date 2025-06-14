@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import GradientText from '../blocks/TextAnimations/GradientText/GradientText';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, CircleChevronLeft, CircleChevronRight, Dot } from 'lucide-react';
 import "./Projects.css";
 
 const Projects = () => {
@@ -214,8 +214,37 @@ const Projects = () => {
             </div>
 
             <div className="project-indicators">
-                <button className="nav-button" onClick={handlePreviousProject}>Précédent</button>
-                <button className="nav-button" onClick={handleNextProject}>Suivant</button>
+                <div className="indicator">
+                    <CircleChevronLeft 
+                        className="prvious-project"
+                        onClick={handlePreviousProject}
+                        color={primaryColor}
+                        size={50}
+                    />
+                </div>
+
+                <ul className="project-indicator-list">
+                    {projects.map((project, index) => (
+                        <li 
+                            key={index} 
+                            className={`project-indicator-item ${activeProject === index ? 'active' : ''}`}
+                        >
+                            <Dot 
+                                color="var(--primary-color)"
+                                size={activeProject === index ? 75 : 50}
+                            />
+                        </li>
+                    ))}
+                </ul>
+
+                <div className="indicator">
+                    <CircleChevronRight 
+                        className="next-project"
+                        onClick={handleNextProject}
+                        color={primaryColor}
+                        size={50}
+                    />
+                </div>
             </div>
         </section>
     );
