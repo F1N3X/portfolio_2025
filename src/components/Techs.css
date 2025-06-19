@@ -1,0 +1,80 @@
+.techs-list {
+  position: relative;
+  margin: auto;
+}
+
+.tech-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+}
+
+.tech-item-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tech-item-inner:hover img {
+  filter: brightness(1.2) contrast(1.1) saturate(1.3);
+  transform: scale(1.1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tech-item-inner:hover span {
+  filter: brightness(1.2) contrast(1.1) saturate(1.3);
+  transform: translate(-50%, 100%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tech-item img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  object-fit: contain;
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, 0.3),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.4),
+    0 0 12px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1) contrast(1.05) saturate(1.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(1px);
+  filter: blur(2px);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tech-item img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) contrast(1.1) saturate(1.3);
+}
+
+.tech-item span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tech-item:nth-child(1)  { transform: translate(-50%, -50%) rotate(0deg)    translate(20rem) rotate(0deg); }
+.tech-item:nth-child(2)  { transform: translate(-50%, -50%) rotate(45deg)   translate(20rem) rotate(-45deg); }
+.tech-item:nth-child(3)  { transform: translate(-50%, -50%) rotate(90deg)   translate(20rem) rotate(-90deg); }
+.tech-item:nth-child(4)  { transform: translate(-50%, -50%) rotate(135deg)  translate(20rem) rotate(-135deg); }
+.tech-item:nth-child(5)  { transform: translate(-50%, -50%) rotate(180deg)  translate(20rem) rotate(-180deg); }
+.tech-item:nth-child(6)  { transform: translate(-50%, -50%) rotate(225deg)  translate(20rem) rotate(-225deg); }
+.tech-item:nth-child(7)  { transform: translate(-50%, -50%) rotate(270deg)  translate(20rem) rotate(-270deg); }
+.tech-item:nth-child(8)  { transform: translate(-50%, -50%) rotate(315deg)  translate(20rem) rotate(-315deg); }
