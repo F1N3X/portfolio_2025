@@ -15,7 +15,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-bubbles: center;
+  align-items: center;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
