@@ -33,9 +33,9 @@ const Techs = () => {
             </h1>
             <div className="techs-list">
                 {techs.map((tech, index) => (
-                    <div key={index} className="tech-item">
+                    <div key={index} className="tech-bubble">
                         <Magnet padding={200} disabled={false} magnetStrength={5}>
-                            <div className="tech-item-inner">
+                            <div className="tech-bubble-inner">
                                 <img src={tech.icon} alt={tech.name} className="tech-icon" />
                                 <span className="tech-name">{tech.name}</span>
                             </div>

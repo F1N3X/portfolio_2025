@@ -3,7 +3,7 @@
   margin: auto;
 }
 
-.tech-item {
+.tech-bubble {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -11,27 +11,27 @@
   transform: translate(-50%, -50%);
 }
 
-.tech-item-inner {
+.tech-bubble-inner {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-bubbles: center;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.tech-item-inner:hover img {
+.tech-bubble-inner:hover img {
   filter: brightness(1.2) contrast(1.1) saturate(1.3);
   transform: scale(1.1);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.tech-item-inner:hover span {
+.tech-bubble-inner:hover span {
   filter: brightness(1.2) contrast(1.1) saturate(1.3);
   transform: translate(-50%, 100%);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.tech-item img {
+.tech-bubble img {
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
@@ -47,12 +47,12 @@
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.tech-item img:hover {
+.tech-bubble img:hover {
   transform: scale(1.1);
   filter: brightness(1.2) contrast(1.1) saturate(1.3);
 }
 
-.tech-item span {
+.tech-bubble span {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -70,11 +70,11 @@
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.tech-item:nth-child(1)  { transform: translate(-50%, -50%) rotate(0deg)    translate(20rem) rotate(0deg); }
-.tech-item:nth-child(2)  { transform: translate(-50%, -50%) rotate(45deg)   translate(20rem) rotate(-45deg); }
-.tech-item:nth-child(3)  { transform: translate(-50%, -50%) rotate(90deg)   translate(20rem) rotate(-90deg); }
-.tech-item:nth-child(4)  { transform: translate(-50%, -50%) rotate(135deg)  translate(20rem) rotate(-135deg); }
-.tech-item:nth-child(5)  { transform: translate(-50%, -50%) rotate(180deg)  translate(20rem) rotate(-180deg); }
-.tech-item:nth-child(6)  { transform: translate(-50%, -50%) rotate(225deg)  translate(20rem) rotate(-225deg); }
-.tech-item:nth-child(7)  { transform: translate(-50%, -50%) rotate(270deg)  translate(20rem) rotate(-270deg); }
-.tech-item:nth-child(8)  { transform: translate(-50%, -50%) rotate(315deg)  translate(20rem) rotate(-315deg); }
+.tech-bubble:nth-child(1)  { transform: translate(-50%, -50%) rotate(0deg)    translate(20rem) rotate(0deg); }
+.tech-bubble:nth-child(2)  { transform: translate(-50%, -50%) rotate(45deg)   translate(20rem) rotate(-45deg); }
+.tech-bubble:nth-child(3)  { transform: translate(-50%, -50%) rotate(90deg)   translate(20rem) rotate(-90deg); }
+.tech-bubble:nth-child(4)  { transform: translate(-50%, -50%) rotate(135deg)  translate(20rem) rotate(-135deg); }
+.tech-bubble:nth-child(5)  { transform: translate(-50%, -50%) rotate(180deg)  translate(20rem) rotate(-180deg); }
+.tech-bubble:nth-child(6)  { transform: translate(-50%, -50%) rotate(225deg)  translate(20rem) rotate(-225deg); }
+.tech-bubble:nth-child(7)  { transform: translate(-50%, -50%) rotate(270deg)  translate(20rem) rotate(-270deg); }
+.tech-bubble:nth-child(8)  { transform: translate(-50%, -50%) rotate(315deg)  translate(20rem) rotate(-315deg); }
