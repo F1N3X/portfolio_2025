@@ -1,0 +1,122 @@
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.speach span {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-bubbles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+.contact-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 1.5rem;
+  transition: transform 0.15s linear;
+}
+
+.contact-bubble:hover {
+  transform: translateY(-0.5rem);
+}
+
+.contact-bubble span {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.contact-form {
+  flex: 1;
+  background-color: grey;
+  padding: 2rem;
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.floating-label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-label input,
+.floating-label textarea {
+  padding: 1rem 0.75rem 0.25rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--input-background);
+  color: var(--text-color);
+}
+
+.floating-label label {
+  position: absolute;
+  left: 0.75rem;
+  top: 1rem;
+  color: var(--text-color);
+  background-color: var(--input-background);
+  padding: 0 0.25rem;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+/* quand input est focus OU non vide */
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label,
+.floating-label textarea:focus + label,
+.floating-label textarea:not(:placeholder-shown) + label {
+  top: -0.6rem;
+  left: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--primary-color);
+}
+
+button[type="submit"] {
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
