@@ -3,11 +3,18 @@ import './Contact.css';
 import GradientText from '../blocks/TextAnimations/GradientText/GradientText';
 import GlareHover from '../blocks/Animations/GlareHover/GlareHover';
 import { Mail, Github, Linkedin } from 'lucide-react';
+import FloatingLabelInput from './Contact/FloatingLabelInput';
+import { useState } from "react";
 
 const Contact = () => {
 
     const primaryColor = "var(--primary-color)";
     const secondaryColor = "var(--secondary-color)";
+
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [object, setObject] = useState("");
+    const [message, setMessage] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -88,18 +95,44 @@ const Contact = () => {
 
                 <div className="contact-form">
                     <form action={handleSubmit}> 
-                        <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" id="email" name="email" required />
+                        <FloatingLabelInput
+                            id="name"
+                            name="name"
+                            label="Nom complet"
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
 
-                            <label htmlFor="object">Sujet</label>
-                            <input type="text" id="object" name="object" required />
+                        <FloatingLabelInput 
+                            id="email"
+                            name="email"
+                            label="Email"
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
 
-                            <label htmlFor="message">Message</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
+                        <FloatingLabelInput
+                            id="object"
+                            name="object"
+                            label="Sujet"
+                            type="text"
+                            value={object}
+                            onChange={(e) => setObject(e.target.value)}
+                        />
 
-                            <button type="submit">Envoyer</button>    
-                        </div>  
+                        <FloatingLabelInput
+                            id="message"
+                            name="message"
+                            label="Message"
+                            type="textarea"
+                            rows="1"
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                        />
+
+                        <button type="submit">Envoyer</button>    
                     </form>
                 </div>
             </div>

@@ -9,6 +9,8 @@
 
   --primary-color: rgba(46, 197, 237, 100);
   --secondary-color: rgba(230, 72, 157, 100);
+  --border-color: #374151;
+  --box-background: rgb(44, 53, 65);
 }
 
 body {
