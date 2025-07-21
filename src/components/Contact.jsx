@@ -5,6 +5,7 @@ import GlareHover from '../blocks/Animations/GlareHover/GlareHover';
 import { Mail, Github, Linkedin } from 'lucide-react';
 import FloatingLabelInput from './Contact/FloatingLabelInput';
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
 
@@ -18,8 +19,29 @@ const Contact = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Handle form submission logic here
-        console.log("Form submitted");
+
+        const serviceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
+        const userId = import.meta.env.VITE_EMAIL_USER_ID;
+
+        emailjs.sendForm(
+            serviceId,
+            templateId,
+            event.target,
+            {
+                publicKey: userId
+            }  
+        )
+        .then(() => {
+            alert("Mail envoyé! Merci 😊");
+            setName("");
+            setEmail("");
+            setObject("");
+            setMessage("");
+        }, (error) => {
+            alert("Oups ... il y a eu un problème avec ton mail 😓");
+            console.log(error);
+        });
     }
 
     return (
@@ -94,7 +116,7 @@ const Contact = () => {
                 </div>
 
                 <div className="contact-form">
-                    <form action={handleSubmit}> 
+                    <form onSubmit={handleSubmit}> 
                         <FloatingLabelInput
                             id="name"
                             name="name"
@@ -115,8 +137,8 @@ const Contact = () => {
 
                         <FloatingLabelInput
                             id="object"
-                            name="object"
-                            label="Sujet"
+                            name="title"
+                            label="Object"
                             type="text"
                             value={object}
                             onChange={(e) => setObject(e.target.value)}
