@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GradientText from '../blocks/TextAnimations/GradientText/GradientText';
 import "./About.css";
 
@@ -41,6 +41,10 @@ const passions = [
 const About = () => {
     const primaryColor = "var(--primary-color)";
     const secondaryColor = "var(--secondary-color)";
+    
+    useEffect(() => {
+        document.documentElement.style.setProperty('--timeline-items', parcours.length);
+    }, []);
 
     return (
         <section id="about">

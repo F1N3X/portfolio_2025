@@ -1,7 +1,7 @@
 .about-main-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
   align-items: stretch;
   margin-top: 2.5rem;
   min-height: 420px;
@@ -9,7 +9,7 @@
 
 .about-left-column {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 2rem;
   height: 100%;
 }
@@ -76,7 +76,6 @@
   background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
   border-radius: 1.2rem;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,0.07);
-  min-height: 100%;
 }
 
 .about-timeline-grid h2 {
@@ -104,16 +103,15 @@
   padding-top: 0.3rem;
   transition: box-shadow 0.2s;
   width: 90%;
-  max-width: 420px;
 }
 
 .timeline-point {
   width: 1.2rem;
   height: 1.2rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background-color: var(--primary-color);
   border-radius: 50%;
   border: 3px solid #fff;
-  box-shadow: 0 0 0 2px var(--primary-color33);
+  box-shadow: 0 0 0 2px #6366f1;
   flex-shrink: 0;
   z-index: 1;
   margin-right: 1.2rem;
@@ -151,10 +149,10 @@
 .timeline-list:before {
   content: "";
   position: absolute;
-  left: 0.6rem;
-  top: 0.8rem;
+  left: 0.7rem;
+  top: 1.2rem;
   width: 3px;
-  height: calc(100% - 7rem);
+  height: calc(100% - (2.5rem * var(--timeline-items, 3)));
   background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
   z-index: 0;
   border-radius: 2px;
@@ -164,7 +162,7 @@
 .passions-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .passion-bloc {
