@@ -22,19 +22,16 @@ const parcours = [
 
 const passions = [
     {
-        titre: "Développement Web",
-        emoji: "💻",
-        description: "Création d'applications web modernes et interactives"
+        titre: "Escrime",
+        emoji: "🤺"
     },
     {
-        titre: "Design UX/UI",
-        emoji: "🎨",
-        description: "Conception d'interfaces utilisateur intuitives et esthétiques"
+        titre: "Violon",
+        emoji: "🎻"
     },
     {
-        titre: "Technologies Émergentes",
-        emoji: "🚀",
-        description: "Exploration des dernières innovations technologiques"
+        titre: "Retro Gaming",
+        emoji: "👾"
     }
 ];
 
