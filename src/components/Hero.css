@@ -33,3 +33,24 @@
   font-size: 1.2em;
   color: rgba(255, 255, 255, 1);
 }
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.hero-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.hero-link:hover {
+  transform: scale(1.1);
+}
