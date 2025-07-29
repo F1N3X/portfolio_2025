@@ -9,6 +9,11 @@
     text-decoration: none; 
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
 #root {
   margin: 0 auto;
   padding: 0 2rem;
@@ -16,13 +21,11 @@
 }
 
 section {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-html {
-  scroll-behavior: smooth;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
