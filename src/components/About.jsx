@@ -66,7 +66,9 @@ const About = () => {
                         </div>
                         <div className="about-text-grid">
                             <span className="about-short-text">
-                                Passionné par le développement web, j'aime créer des expériences interactives et accessibles.
+                                Passionné par le développement web depuis le lycée, je cherche sans cesse à améliorer mes compétences et à relever de nouveaux défis.
+                                <br/>
+                                Curieux, passionné et toujours prêt à apprendre, j'essaie constamment d'explorer de nouvelles technologies et de nouvelles approches.
                             </span>
                         </div>
                     </div>
