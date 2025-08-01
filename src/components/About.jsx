@@ -4,19 +4,19 @@ import "./About.css";
 
 const parcours = [
     {
-        titre: "Développeur Web",
-        date: "2023 - Aujourd'hui",
-        description: "Freelance, création de sites et applications web."
+        titre: "Alternant Développeur Full Stack",
+        date: "2024 - Aujourd'hui",
+        description: "Dataventure"
     },
     {
-        titre: "Formation React",
-        date: "2022",
-        description: "Approfondissement des frameworks modernes."
+        titre: "Stage IOT",
+        date: "2024",
+        description: "IIM Digital School"
     },
     {
-        titre: "Licence Informatique",
-        date: "2019 - 2022",
-        description: "Université de Paris."
+        titre: "Responsable de projet",
+        date: "2023 - 2024",
+        description: "404 De Vinci"
     }
 ];
 
