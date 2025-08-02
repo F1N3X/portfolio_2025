@@ -66,7 +66,8 @@ const About = () => {
                         </div>
                         <div className="about-text-grid">
                             <span className="about-short-text">
-                                Passionné par le développement web depuis le lycée, je cherche sans cesse à améliorer mes compétences et à relever de nouveaux défis.
+                                Développeur web depuis plusieurs années, je cherche sans cesse à améliorer mes compétences et à relever de nouveaux défis.
+                                <br/>
                                 <br/>
                                 Curieux, passionné et toujours prêt à apprendre, j'essaie constamment d'explorer de nouvelles technologies et de nouvelles approches.
                             </span>
@@ -78,7 +79,7 @@ const About = () => {
                         {passions.map((passion, idx) => (
                             <div className="passion-bloc" key={idx}>
                                 <div className="passion-emoji">{passion.emoji}</div>
-                                <h3 className="passion-title">{passion.titre}</h3>
+                                <h4 className="passion-title">{passion.titre}</h4>
                             </div>
                         ))}
                     </div>
@@ -86,7 +87,7 @@ const About = () => {
                 
                 {/* Colonne droite - Parcours */}
                 <div className="about-timeline-grid">
-                    <h2>Mon parcours</h2>
+                    <h3>Mon parcours</h3>
                     <ul className="timeline-list">
                         {parcours.map((etape, idx) => (
                             <li className="timeline-item" key={idx}>

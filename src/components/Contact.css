@@ -74,7 +74,7 @@
 .floating-label textarea {
   padding: 1rem 0.75rem 0.25rem 0.75rem;
   font-size: 1rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--box-border);
   border-radius: 8px;
   background-color: var(--input-background);
   color: var(--text-color);
