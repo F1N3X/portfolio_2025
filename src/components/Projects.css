@@ -113,9 +113,10 @@
     background: #30363f;
     overflow: hidden;
     position: relative;
-    transform: perspective(1200px) rotateX(10deg) rotateY(-20deg) rotateZ(5deg);
+    transform: var(--current-transform, perspective(1200px) rotateX(10deg) rotateY(-20deg) rotateZ(5deg));
     animation: idle 5s infinite ease-in-out;
     margin: 2.5rem 2rem;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 @keyframes idle {
@@ -131,13 +132,13 @@
 }
 
 .img-display.transitioning-next {
-    animation: slideOutRight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards,
-               slideInFromLeft 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+  opacity: 0;
+  transform: translateX(200px) rotateY(-20deg); 
 }
 
 .img-display.transitioning-prev {
-    animation: slideOutLeft 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards,
-               slideInFromRight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+  opacity: 0;
+  transform: translateX(-200px) rotateY(20deg);
 }
 
 @keyframes slideOutRight {
@@ -234,6 +235,7 @@
     border-bottom-right-radius: 0.75rem;
     margin-top: 2rem;
     background: #23232a;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .nav-button:disabled {

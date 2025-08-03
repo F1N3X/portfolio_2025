@@ -27,20 +27,14 @@ const Projects = () => {
         }
         
         setTimeout(() => {
-            if (activeProject < projects.length - 1) {
-                setActiveProject(activeProject + 1);
-            } else {
-                setActiveProject(0);
-            }
-            
-            setTimeout(() => {
-                setIsTransitioning(false);
-                setTransitionDirection('');
+            setActiveProject((prev) => (prev < projects.length - 1 ? prev + 1 : 0));
 
-                if (imgDisplayRef.current) {
-                    imgDisplayRef.current.style.removeProperty('--current-transform');
-                }
-            }, 50);
+            setIsTransitioning(false);
+            setTransitionDirection('');
+
+            if (imgDisplayRef.current) {
+                imgDisplayRef.current.style.removeProperty('--current-transform');
+            }
         }, 300);
     }
 
@@ -57,20 +51,14 @@ const Projects = () => {
         }
         
         setTimeout(() => {
-            if (activeProject > 0) {
-                setActiveProject(activeProject - 1);
-            } else {
-                setActiveProject(projects.length - 1);
-            }
+            setActiveProject((prev) => (prev > 0 ? prev - 1 : projects.length - 1));
             
-            setTimeout(() => {
-                setIsTransitioning(false);
-                setTransitionDirection('');
+            setIsTransitioning(false);
+            setTransitionDirection('');
 
-                if (imgDisplayRef.current) {
-                    imgDisplayRef.current.style.removeProperty('--current-transform');
-                }
-            }, 50);
+            if (imgDisplayRef.current) {
+                imgDisplayRef.current.style.removeProperty('--current-transform');
+            }
         }, 300);
     }
 
