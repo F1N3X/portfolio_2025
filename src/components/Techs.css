@@ -1,14 +1,37 @@
+#techs {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#techs.is-visible {
+  opacity: 1;
+}
+
 .techs-list {
   position: relative;
+  min-height: 50rem; 
   margin: auto;
 }
 
+/* ANIMATION D'APPARITION */
 .tech-bubble {
   position: absolute;
   top: 50%;
   left: 50%;
+  
+  /* État initial : invisible et au centre */
+  opacity: 0;
   transform-origin: center;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.5);
+
+  /* Transition qui s'appliquera quand .is-visible sera ajoutée au parent */
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+  transition-delay: var(--delay);
+}
+
+#techs.is-visible .tech-bubble {
+  opacity: 1;
+  transform: var(--final-transform);
 }
 
 .tech-bubble-inner {
@@ -16,22 +39,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .tech-bubble-inner:hover img {
   filter: brightness(1.2) contrast(1.1) saturate(1.3);
   transform: scale(1.1);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .tech-bubble-inner:hover span {
   filter: brightness(1.2) contrast(1.1) saturate(1.3);
   transform: translate(-50%, 100%);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.tech-bubble img {
+.tech-bubble-inner img {
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
@@ -44,15 +67,16 @@
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(1px);
   filter: blur(2px);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
 }
 
-.tech-bubble img:hover {
+.tech-bubble-inner img:hover {
   transform: scale(1.1);
   filter: brightness(1.2) contrast(1.1) saturate(1.3);
 }
 
-.tech-bubble span {
+.tech-bubble-inner span {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -67,14 +91,9 @@
   backdrop-filter: blur(4px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   z-index: 1;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.tech-bubble:nth-child(1)  { transform: translate(-50%, -50%) rotate(0deg)    translate(20rem) rotate(0deg); }
-.tech-bubble:nth-child(2)  { transform: translate(-50%, -50%) rotate(45deg)   translate(20rem) rotate(-45deg); }
-.tech-bubble:nth-child(3)  { transform: translate(-50%, -50%) rotate(90deg)   translate(20rem) rotate(-90deg); }
-.tech-bubble:nth-child(4)  { transform: translate(-50%, -50%) rotate(135deg)  translate(20rem) rotate(-135deg); }
-.tech-bubble:nth-child(5)  { transform: translate(-50%, -50%) rotate(180deg)  translate(20rem) rotate(-180deg); }
-.tech-bubble:nth-child(6)  { transform: translate(-50%, -50%) rotate(225deg)  translate(20rem) rotate(-225deg); }
-.tech-bubble:nth-child(7)  { transform: translate(-50%, -50%) rotate(270deg)  translate(20rem) rotate(-270deg); }
-.tech-bubble:nth-child(8)  { transform: translate(-50%, -50%) rotate(315deg)  translate(20rem) rotate(-315deg); }
+.tech-bubble:hover span.tech-name {
+  transform: translate(-50%, 150%);
+}
