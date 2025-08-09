@@ -152,10 +152,12 @@ const Techs = () => {
                     '--delay': `${index * 50}ms` 
                   }}
                 >
-                  <div className="tech-bubble-inner">
-                    <img src={tech.image} alt={tech.title} className="tech-icon" />
-                    <span className="tech-name">{tech.title}</span>
-                  </div>
+                  <Magnet padding={250} disabled={false} magnetStrength={8}>
+                    <div className="tech-bubble-inner">
+                      <img src={tech.image} alt={tech.title} className="tech-icon" />
+                      <span className="tech-name">{tech.title}</span>
+                    </div>
+                  </Magnet>
                 </div>
               ))}
             </div>
