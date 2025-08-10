@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import GradientText from '../blocks/TextAnimations/GradientText/GradientText';
 import { ExternalLink, Github, CircleChevronLeft, CircleChevronRight, Dot } from 'lucide-react';
 import "./Projects.css";
+import DecryptedText from '../blocks/TextAnimations/DecryptedText/DecryptedText';
+import TextType from '../blocks/TextAnimations/TextType/TextType';
 
 const Projects = () => {
     const primaryColor = "var(--primary-color)";
@@ -155,13 +157,38 @@ const Projects = () => {
 
             <div className="projects-navigation">
                 <div className="projects-content">
-                    <h2>{projects[activeProject].title}</h2>
+                    <h2>
+                        <TextType 
+                            key={activeProject}
+                            text={projects[activeProject].title}
+                            startOnVisible={true}
+                            typingSpeed={75}
+                            cursorCharacter="|"
+                            loop={false}
+                        />
+                    </h2>
 
-                    <p>{projects[activeProject].description}</p>
+                    <p>
+                        <DecryptedText
+                            key={activeProject}
+                            text={projects[activeProject].description}
+                            animateOn="view"
+                            revealDirection="start"
+                            speed={150}
+                            maxIterations={15}
+                        />
+                    </p>
 
-                    <div className="techs">
+                    <div 
+                        className="techs" 
+                        key={activeProject}
+                    >
                         {projects[activeProject].techs.map((tech, index) => (
-                            <div key={index}>
+                            <div 
+                                key={index}
+                                className="project-fade-in"
+                                style={{ "--delay": `${index * 0.12}s` }}
+                            >
                                 <img
                                     src={techsLogos[tech]}
                                     alt={tech}
