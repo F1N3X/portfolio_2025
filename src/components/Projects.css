@@ -142,6 +142,7 @@
     overflow: hidden;
     position: relative;
     transform: var(--current-transform, perspective(1200px) rotateX(10deg) rotateY(-20deg) rotateZ(5deg));
+    overflow: hidden;
     animation: idle 5s infinite ease-in-out;
     margin: 2.5rem 2rem;
     transition: transform 0.5s ease, opacity 0.5s ease;
@@ -258,7 +259,6 @@
     display: block;
     width: 100%;
     height: calc(100% - 2.2rem);
-    object-fit: cover;
     border-bottom-left-radius: 0.75rem;
     border-bottom-right-radius: 0.75rem;
     margin-top: 2rem;

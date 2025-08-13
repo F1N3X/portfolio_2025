@@ -4,6 +4,10 @@ import { ExternalLink, Github, CircleChevronLeft, CircleChevronRight, Dot } from
 import "./Projects.css";
 import DecryptedText from '../blocks/TextAnimations/DecryptedText/DecryptedText';
 import TextType from '../blocks/TextAnimations/TextType/TextType';
+import pixelWarImg from '../assets/projects/pixel_war.png';
+import canvas from '../assets/projects/canvas.png';
+import librairieUI from '../assets/projects/librairie_ui.png';
+import puissance4 from '../assets/projects/puissance_4.png';
 
 const Projects = () => {
     const primaryColor = "var(--primary-color)";
@@ -97,41 +101,49 @@ const Projects = () => {
 
     const techsLogos = {
         React: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-        JavaScript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-        CSS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-        HTML: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
         NodeJs: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg",
         Express: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
         MongoDB: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+        TypeScript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        JavaScript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        Jest: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
+        Storybook: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg",
+        SocketIO: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg",
     };
-
-
 
     const projects = [
         {
-            title: "Projet 1",
-            description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: "https://randomwordgenerator.com/img/picture-generator/nick-dunlap-h65WkTvyWJY-unsplash.jpg",
-            techs: ["React", "CSS", "JavaScript"],
-            siteLink: "https://example.com/projet1",
-            codeLink: ""
+            title: "Pixel War",
+            description: "Une toile blanche où chaque utilisateur peut placer un pixel toutes les X minutes. Chat en temps réel et classement général poussent les joueurs à exprimer leur créativité.",
+            image: pixelWarImg,
+            techs: ["React", "Express", "TypeScript"],
+            siteLink: "",
+            codeLink: "https://github.com/La-404-Devinci/pixel-war"
         },
         {
-            title: "Projet 2",
-            description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: "https://randomwordgenerator.com/img/picture-generator/53e8d2434f5bb10ff3d8992cc12c30771037dbf85254784c772d7ddc9e44_640.jpg",
-            techs: ["HTML", "CSS", "JavaScript"],
-            siteLink: "https://example.com/projet2",
-            codeLink: ""
+            title: "Puissance 4 en ligne",
+            description: "Utilisation de Socket.IO pour créer un jeu de puissance 4 en temps réel qui suis les mouvements des doigts et qui détecte quand ils sont rapprochés pour valider le coup.",
+            image: puissance4,
+            techs: ["SocketIO", "Express", "TypeScript"],
+            siteLink: "https://power4.kan-a-pesh.fr/",
+            codeLink: "https://github.com/IIM-Backrow/B3-SocketIO"
         },
         {
-            title: "Projet 3",
-            description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: "https://randomwordgenerator.com/img/picture-generator/55e0d5444257ab14f1dc8460962e33791c3ad6e04e50744077297bd5924fc0_640.jpg",
-            techs: ["NodeJs", "Express", "MongoDB"],
-            siteLink: "https://example.com/projet3",
-            codeLink: "https://example.com/code/projet3"
-        }
+            title: "Canvas",
+            description: "Projet visant à explorer les possibilités d'un canvas au travers d'une recherche artistique sur un thème",
+            image: canvas,
+            techs: ["JavaScript"],
+            siteLink: "https://creative-developement.vercel.app/",
+            codeLink: "https://github.com/F1N3X/creative_developement"
+        },
+        {
+            title: "Librairie UI",
+            description: "Projet de création de librairie UI sur la base d'un travail collaboratif en mettant en place une chaîne CI/CD.",
+            image: librairieUI,
+            techs: ["React", "TypeScript", "Storybook", "Jest"],
+            siteLink: "https://iim-backrow.github.io/B3-libraryUI",
+            codeLink: "https://github.com/IIM-Backrow/B3-libraryUI"
+        },
     ];
 
     const getImageDisplayClass = () => {
