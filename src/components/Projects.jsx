@@ -186,8 +186,9 @@ const Projects = () => {
                             text={projects[activeProject].description}
                             animateOn="view"
                             revealDirection="start"
-                            speed={150}
-                            maxIterations={15}
+                            speed={110}
+                            maxIterations={9}
+                            useOriginalCharsOnly={true}
                         />
                     </p>
 
@@ -215,21 +216,28 @@ const Projects = () => {
                     </div>
                     
                     <div className="project-links">
-                            {projects[activeProject].siteLink && (
-                                <div className="site-link">
-                                    <ExternalLink />
-                                    <a href={projects[activeProject].siteLink} target="_blank">Demo</a>
-                                </div>
-                            )}
+                        {projects[activeProject].siteLink && (
+                            <div
+                                className="site-link project-link-fade-in"
+                                style={{ "--delay": "0.08s" }}
+                            >
+                                <ExternalLink />
+                                <a href={projects[activeProject].siteLink} target="_blank">Demo</a>
+                            </div>
+                        )}
 
-                            {projects[activeProject].codeLink && (
-                                <div className="code-link">
-                                    <Github />
-                                    <a href={projects[activeProject].codeLink} target="_blank">Code</a>
-                                </div>
-                            )}
+                        {projects[activeProject].codeLink && (
+                            <div
+                                className="code-link project-link-fade-in"
+                                style={{ "--delay": "0.22s" }}
+                            >
+                                <Github />
+                                <a href={projects[activeProject].codeLink} target="_blank">Code</a>
+                            </div>
+                        )}
                     </div>
                 </div>
+
                 <div className={getImageDisplayClass()} ref={imgDisplayRef}>
                     <div className="mac-window-header">
                         <span className="mac-dot red"></span>
