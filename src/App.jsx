@@ -11,39 +11,79 @@ function App() {
   const sectionsRef = useRef([])
   const indexRef = useRef(0)
   const isScrollingRef = useRef(false)
+  const cooldownRef = useRef(false)
+  const firstDeltaRef = useRef(null)
 
   useEffect(() => {
     sectionsRef.current = document.querySelectorAll('section')
     
     const onWheel = (e) => {
       e.preventDefault()
-      if (isScrollingRef.current) return
-      isScrollingRef.current = true
+      
+      // Si on est en cooldown ou en train de scroller, on bloque tout
+      if (cooldownRef.current || isScrollingRef.current) return
+      
+      // Première détection de delta pour ce geste
+      if (firstDeltaRef.current === null) {
+        firstDeltaRef.current = Math.abs(e.deltaY)
+      }
+      
+      // Détection de trackpad vs molette basée sur le premier delta
+      const isTrackpad = firstDeltaRef.current < 50
+      const threshold = isTrackpad ? 20 : 50
+      
+      // On vérifie si le delta actuel dépasse le seuil
+      if (Math.abs(e.deltaY) > threshold) {
+        // Activer le cooldown immédiatement pour bloquer les événements suivants
+        cooldownRef.current = true
+        isScrollingRef.current = true
+        
+        const direction = Math.sign(e.deltaY)
+        const newIndex = Math.min(
+          sectionsRef.current.length - 1,
+          Math.max(0, indexRef.current + direction)
+        )
+        
+        if (newIndex !== indexRef.current) {
+          indexRef.current = newIndex
+          const target = sectionsRef.current[indexRef.current]
+          target.scrollIntoView({ behavior: 'smooth' })
 
-      const dir = Math.sign(e.deltaY)
-      indexRef.current = Math.min(
-        sectionsRef.current.length - 1,
-        Math.max(0, indexRef.current + dir)
-      )
+          const obs = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+              isScrollingRef.current = false
+              obs.disconnect()
+              
+              // Cooldown plus long pour trackpad
+              const cooldownTime = isTrackpad ? 500 : 300
+              setTimeout(() => {
+                cooldownRef.current = false
+                firstDeltaRef.current = null
+              }, cooldownTime)
+            }
+          }, {
+            root: null,
+            threshold: 0.85
+          })
 
-      const target = sectionsRef.current[indexRef.current]
-      target.scrollIntoView({ behavior: 'smooth' })
-
-      const obs = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
+          obs.observe(target)
+        } else {
           isScrollingRef.current = false
-          obs.disconnect()
+          // Même cooldown si on n'a pas changé de section
+          const cooldownTime = isTrackpad ? 500 : 200
+          setTimeout(() => {
+            cooldownRef.current = false
+            firstDeltaRef.current = null
+          }, cooldownTime)
         }
-      }, {
-        root: null,
-        threshold: 0.85  // on considère la section "atteinte" quand 85% est visible
-      })
-
-      obs.observe(target)
+      }
     }
 
     window.addEventListener('wheel', onWheel, { passive: false })
-    return () => window.removeEventListener('wheel', onWheel)
+    
+    return () => {
+      window.removeEventListener('wheel', onWheel)
+    }
   }, [])
 
   return (
