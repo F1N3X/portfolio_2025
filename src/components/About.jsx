@@ -4,8 +4,13 @@ import "./About.css";
 
 const parcours = [
     {
+        titre: "Alternant Développeur .NET et Agile",
+        date: "2025 - Aujourd'hui",
+        description: "Société Générale"
+    },
+    {
         titre: "Alternant Développeur Full Stack",
-        date: "2024 - Aujourd'hui",
+        date: "2024 - 2025",
         description: "Dataventure"
     },
     {
