@@ -79,32 +79,35 @@ const About = () => {
                         </div>
                     </div>
                     
-                    {/* Blocs des passions */}
-                    <div className="passions-container">
-                        {passions.map((passion, idx) => (
-                            <div className="passion-bloc" key={idx}>
-                                <div className="passion-emoji">{passion.emoji}</div>
-                                <h4 className="passion-title">{passion.titre}</h4>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                
-                {/* Colonne droite - Parcours */}
-                <div className="about-timeline-grid">
-                    <h3>Mon parcours</h3>
-                    <ul className="timeline-list">
-                        {parcours.map((etape, idx) => (
-                            <li className="timeline-item" key={idx}>
-                                <div className="timeline-point" />
-                                <div className="timeline-content">
-                                    <div className="timeline-title">{etape.titre}</div>
-                                    <div className="timeline-date">{etape.date}</div>
-                                    {etape.description && <div className="timeline-desc">{etape.description}</div>}
+                    {/* Wrapper pour passions et timeline */}
+                    <div className="passions-timeline-wrapper">
+                        {/* Blocs des passions */}
+                        <div className="passions-container">
+                            {passions.map((passion, idx) => (
+                                <div className="passion-bloc" key={idx}>
+                                    <div className="passion-emoji">{passion.emoji}</div>
+                                    <h4 className="passion-title">{passion.titre}</h4>
                                 </div>
-                            </li>
-                        ))}
-                    </ul>
+                            ))}
+                        </div>
+                        
+                        {/* Parcours */}
+                        <div className="about-timeline-grid">
+                            <h3>Mon parcours</h3>
+                            <ul className="timeline-list">
+                                {parcours.map((etape, idx) => (
+                                    <li className="timeline-item" key={idx}>
+                                        <div className="timeline-point" />
+                                        <div className="timeline-content">
+                                            <div className="timeline-title">{etape.titre}</div>
+                                            <div className="timeline-date">{etape.date}</div>
+                                            {etape.description && <div className="timeline-desc">{etape.description}</div>}
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

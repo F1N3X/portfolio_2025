@@ -1,6 +1,5 @@
 .about-main-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
   gap: 2rem;
   align-items: stretch;
   margin: 0 10rem;
@@ -8,7 +7,7 @@
 
 .about-left-column {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 2rem;
   height: 100%;
 }
@@ -77,6 +76,8 @@
   box-shadow: none;
   border-radius: 1rem;
   transition: all 0.2s;
+  grid-column: 2;
+  grid-row: 1 / -1;
 }
 
 .about-timeline-grid:hover {
@@ -145,17 +146,6 @@
   z-index: 2;
 }
 
-/* .timeline-item:last-child .timeline-point::after {
-  content: "";
-  position: absolute;
-  left: calc(50% - 3px);
-  top: 50%;
-  width: 6px;
-  height: 6rem;
-  background: var(--box-bg);
-  z-index: 1;
-} */
-
 .timeline-item:last-child::after {
   content: "";
   position: absolute;
@@ -208,6 +198,10 @@
 }
 
 /* Styles pour les blocs de passions */
+.passions-timeline-wrapper {
+  display: contents;
+}
+
 .passions-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -235,7 +229,7 @@
 }
 
 .passion-emoji {
-  font-size: 3.5rem;
+  font-size: 4rem;
   display: block;
   color: var(--primary-color);
 }
@@ -246,4 +240,51 @@
   margin: 0;
   line-height: 1.2;
   text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .about-main-grid {
+    margin: 0 5rem;
+  }
+
+  .about-left-column {
+    gap: 1.5rem;
+  }
+
+  .about-left-outer-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .about-emoji {
+    width: 5rem;
+    height: 5rem;
+    font-size: 3.5rem;
+  }
+
+  .about-short-text {
+    text-align: center;
+  }
+
+  .passions-timeline-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .passions-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    flex: 1;
+  }
+
+  .about-timeline-grid {
+    flex: 1;
+    padding: 1.5rem 1rem;
+  }
+
+  .passion-bloc {
+    padding: 1rem 0.5rem;
+  }
 }
