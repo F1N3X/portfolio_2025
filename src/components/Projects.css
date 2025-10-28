@@ -356,3 +356,21 @@ ul {
 .active {
     opacity: 1;
 }
+
+@media (max-width: 1200px) {
+    .projects-navigation {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .img-display {
+        margin: 2rem auto;
+        max-width: 90%;
+    }
+    
+    .projects-content {
+        max-width: 90%;
+    }
+}
