@@ -138,7 +138,7 @@ const Contact = () => {
                         <FloatingLabelInput
                             id="object"
                             name="title"
-                            label="Object"
+                            label="Objet"
                             type="text"
                             value={object}
                             onChange={(e) => setObject(e.target.value)}
