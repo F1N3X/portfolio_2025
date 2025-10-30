@@ -123,3 +123,34 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: var(--secondary-color);
 }
+
+@media (max-width: 1200px) {
+  .contact-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-bubbles {
+    display: none;
+  }
+
+  .contact-info {
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .speach span {
+    font-size: 1.5rem;
+  }
+
+  .speach p {
+    font-size: 1.2rem;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 60%;
+    min-width: 0;
+    padding: 1.5rem;
+  }
+}
