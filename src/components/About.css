@@ -288,3 +288,10 @@
     padding: 1rem 0.5rem;
   }
 }
+
+@media (max-width: 502px) {
+  .timeline-item:last-child::after
+  {
+    height: 8rem;
+  }
+}
