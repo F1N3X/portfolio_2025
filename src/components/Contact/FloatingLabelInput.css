@@ -65,20 +65,26 @@ textarea.floating-input + .floating-label.active {
     transform: translateY(-50%);
 }
 
-button[type="submit"] {
-    padding: 1rem;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-    margin-top: 1rem;
-}
+@media (max-width: 1200px) {
+    .floating-input {
+        font-size: 1.2rem;
+        padding: 1.2rem 1rem 0.5rem 1rem;
+    }
 
-button[type="submit"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+    .floating-label {
+        font-size: 1.1rem;
+    }
+
+    .floating-label.active {
+        font-size: 0.9rem;
+    }
+
+    textarea.floating-input {
+        min-height: 150px;
+    }
+
+    button[type="submit"] {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
 }
