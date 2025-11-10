@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
+
 import './Contact.css';
 import GradientText from '../blocks/TextAnimations/GradientText/GradientText';
 import GlareHover from '../blocks/Animations/GlareHover/GlareHover';
 import { Mail, Github, Linkedin } from 'lucide-react';
 import FloatingLabelInput from './Contact/FloatingLabelInput';
-import { useState } from "react";
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+    const { t } = useTranslation();
 
     const primaryColor = "var(--primary-color)";
     const secondaryColor = "var(--secondary-color)";

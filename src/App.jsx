@@ -5,6 +5,7 @@ import Contact from './components/Contact'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
 import Techs from './components/Techs'
+import LanguageSwitcher from './components/LanguageSwitcher'
 
 function App() {
 
@@ -88,6 +89,7 @@ function App() {
 
   return (
     <>
+      <LanguageSwitcher />
       <Hero />
       <About />
       <Projects />

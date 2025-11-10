@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import GradientText from '../blocks/TextAnimations/GradientText/GradientText';
 import "./About.css";
+import { useTranslation } from 'react-i18next';
 
 const parcours = [
     {
@@ -41,6 +42,7 @@ const passions = [
 ];
 
 const About = () => {
+    const { t } = useTranslation();
     const primaryColor = "var(--primary-color)";
     const secondaryColor = "var(--secondary-color)";
     

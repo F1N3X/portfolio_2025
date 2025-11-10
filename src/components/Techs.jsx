@@ -3,8 +3,10 @@ import GradientText from '../blocks/TextAnimations/GradientText/GradientText';
 import Magnet from '../blocks/Animations/Magnet/Magnet';
 import './Techs.css';
 import { useEffect, useState, useRef } from "react";
+import { useTranslation } from 'react-i18next';
 
 const Techs = () => {
+    const { t } = useTranslation();
 
     const primaryColor = "var(--primary-color)";
     const secondaryColor = "var(--secondary-color)";
@@ -139,7 +141,7 @@ const Techs = () => {
                     showBorder={false}
                     className="custom-class"
                 >
-                    Mes Techs
+                    {t('techs.title')}
                 </GradientText>
             </h1>
             <div className="techs-list">

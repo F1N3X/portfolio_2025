@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "role": "Développeur Web Full Stack",
+    "description": "Disponible pour de nouveaux projets"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "description1": "Développeur web depuis plusieurs années, je cherche sans cesse à améliorer mes compétences et à relever de nouveaux défis.",
+    "description2": "Curieux, passionné et toujours prêt à apprendre, j'essaie constamment d'explorer de nouvelles technologies et de nouvelles approches.",
+    "experience": 
+    {
+      "title" : "Mon parcours",
+      "exp1" :
+      {
+        "title" : "Alternant Développeur .NET et Agile",
+        "date" : "2025 - Aujourd'hui",
+        "company" : "Société Générale"
+      },
+      "exp2" :
+      {
+        "title" : "Alternant Développeur Full Stack",
+        "date" : "2024 - 2025",
+        "company" : "Dataventure"
+      },
+      "exp3" :
+      {
+        "title" : "Stage IOT",
+        "date" : "2024",
+        "company" : "IIM Digital School"
+      },
+      "exp4" :
+      {
+        "title" : "Responsable de projet",
+        "date" : "2023 - 2024",
+        "company" : "404 De Vinci"
+      }
+    },
+    "hobbies": {
+      "hobbie1": "Escrime",
+      "hobbie2": "Violon",
+      "hobbie3": "Retro Gaming"
+    }
+  },
+  "projects": {
+    "title": "Mes projets",
+    "project1": {
+      "name": "Pixel War",
+      "description": "Une toile blanche où chaque utilisateur peut placer un pixel toutes les X minutes. Chat en temps réel et classement général poussent les joueurs à exprimer leur créativité.",
+      "technologies": ["React", "Express", "TypeScript"]
+    },
+    "project2": {
+      "name": "Puissance 4 en ligne",
+      "description": "Utilisation de Socket.IO pour créer un jeu de puissance 4 en temps réel qui suis les mouvements des doigts et qui détecte quand ils sont rapprochés pour valider le coup.",
+      "technologies": ["SocketIO", "Express", "TypeScript"]
+    },
+    "project3": {
+      "name": "Canvas",
+      "description": "Projet visant à explorer les possibilités d'un canvas au travers d'une recherche artistique sur un thème",
+      "technologies": ["JavaScript"]
+    },
+    "project4": {
+      "name": "Librairie UI",
+      "description": "Projet de création de librairie UI sur la base d'un travail collaboratif en mettant en place une chaîne CI/CD.",
+      "technologies": ["React", "TypeScript", "Storybook", "Jest"]
+    }
+  },
+  "techs": {
+    "title": "Mes techs"
+  },
+  "contact": {
+    "title": "Me contacter",
+    "subtitle": "Prêt à collaborer sur de futurs projets ?",
+    "greeting": "Discutons ensemble !",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "subject": "Objet",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès !",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    }
+  }
+}

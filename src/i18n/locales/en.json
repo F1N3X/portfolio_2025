@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "role": "Full Stack Web Developer",
+    "description": "Available for new projects"
+  },
+  "about": {
+    "title": "About me",
+    "description1": "Web developer for several years, I continuously seek to improve my skills and take on new challenges.",
+    "description2": "Curious, passionate and always eager to learn, I constantly explore new technologies and approaches.",
+    "experience": 
+    {
+      "title": "My background",
+      "exp1": {
+        "title": "Apprentice .NET & Agile Developer",
+        "date": "2025 - Present",
+        "company": "Société Générale"
+      },
+      "exp2": {
+        "title": "Apprentice Full Stack Developer",
+        "date": "2024 - 2025",
+        "company": "Dataventure"
+      },
+      "exp3": {
+        "title": "IOT Internship",
+        "date": "2024",
+        "company": "IIM Digital School"
+      },
+      "exp4": {
+        "title": "Project Manager",
+        "date": "2023 - 2024",
+        "company": "404 De Vinci"
+      }
+    },
+    "hobbies": {
+      "hobbie1": "Fencing",
+      "hobbie2": "Violin",
+      "hobbie3": "Retro Gaming"
+    }
+  },
+  "projects": {
+    "title": "My projects",
+    "project1": {
+      "name": "Pixel War",
+      "description": "A blank canvas where each user can place a pixel every X minutes. Real-time chat and a global leaderboard encourage players to express their creativity.",
+      "technologies": [
+        "React",
+        "Express",
+        "TypeScript"
+      ]
+    },
+    "project2": {
+      "name": "Online Connect Four",
+      "description": "Uses Socket.IO to create a real-time Connect Four game that tracks finger movements and detects when they are brought together to validate a move.",
+      "technologies": [
+        "SocketIO",
+        "Express",
+        "TypeScript"
+      ]
+    },
+    "project3": {
+      "name": "Canvas",
+      "description": "Project exploring the possibilities of a canvas through an artistic research on a theme",
+      "technologies": [
+        "JavaScript"
+      ]
+    },
+    "project4": {
+      "name": "UI Library",
+      "description": "Project to create a UI library based on collaborative work by setting up a CI/CD pipeline.",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Storybook",
+        "Jest"
+      ]
+    }
+  },
+  "techs": {
+    "title": "My techs"
+  },
+  "contact": {
+    "title": "Contact me",
+    "subtitle": "Ready to collaborate on future projects?",
+    "greeting": "Let's talk!",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "An error occurred. Please try again."
+    }
+  }
+}

@@ -2,8 +2,10 @@ import React from "react";
 import GradientText from '../blocks/TextAnimations/GradientText/GradientText';
 import { Dot, Mail, Github, Linkedin, ChevronDown } from 'lucide-react';
 import './Hero.css';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+    const { t } = useTranslation();
 
     const primaryColor = "var(--primary-color)";
     const secondaryColor = "var(--secondary-color)";
@@ -23,11 +25,11 @@ const Hero = () => {
             </h1>
 
             <div className="hero-content">
-                <h2 className="hero-title">Développeur Web Full-Stack</h2>
+                <h2 className="hero-title">{t('hero.role')}</h2>
 
                 <div className="hero-description">
                     <Dot className="dot" size={50} color="green"/>
-                    <p>Disponible pour de nouveaux projets</p>
+                    <p>{t('hero.description')}</p>
                 </div>
 
                 <div className="hero-links">

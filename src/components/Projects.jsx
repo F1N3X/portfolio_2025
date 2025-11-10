@@ -8,8 +8,11 @@ import pixelWarImg from '../assets/projects/pixel_war.png';
 import canvas from '../assets/projects/canvas.png';
 import librairieUI from '../assets/projects/librairie_ui.png';
 import puissance4 from '../assets/projects/puissance_4.png';
+import { useTranslation } from 'react-i18next';
 
 const Projects = () => {
+    const { t } = useTranslation();
+    
     const primaryColor = "var(--primary-color)";
     const secondaryColor = "var(--secondary-color)";
 
