@@ -116,32 +116,32 @@ const Projects = () => {
 
     const projects = [
         {
-            title: "Pixel War",
-            description: "Une toile blanche où chaque utilisateur peut placer un pixel toutes les X minutes. Chat en temps réel et classement général poussent les joueurs à exprimer leur créativité.",
+            title: t('projects.project1.name'),
+            description: t('projects.project1.description'),
             image: pixelWarImg,
             techs: ["React", "Express", "TypeScript"],
             siteLink: "",
             codeLink: "https://github.com/La-404-Devinci/pixel-war"
         },
         {
-            title: "Puissance 4 en ligne",
-            description: "Utilisation de Socket.IO pour créer un jeu de puissance 4 en temps réel qui suis les mouvements des doigts et qui détecte quand ils sont rapprochés pour valider le coup.",
+            title: t('projects.project2.name'),
+            description: t('projects.project2.description'),
             image: puissance4,
             techs: ["SocketIO", "Express", "TypeScript"],
             siteLink: "https://power4.kan-a-pesh.fr/",
             codeLink: "https://github.com/IIM-Backrow/B3-SocketIO"
         },
         {
-            title: "Canvas",
-            description: "Projet visant à explorer les possibilités d'un canvas au travers d'une recherche artistique sur un thème",
+            title: t('projects.project3.name'),
+            description: t('projects.project3.description'),
             image: canvas,
             techs: ["JavaScript"],
             siteLink: "https://creative-developement.vercel.app/",
             codeLink: "https://github.com/F1N3X/creative_developement"
         },
         {
-            title: "Librairie UI",
-            description: "Projet de création de librairie UI sur la base d'un travail collaboratif en mettant en place une chaîne CI/CD.",
+            title: t('projects.project4.name'),
+            description: t('projects.project4.description'),
             image: librairieUI,
             techs: ["React", "TypeScript", "Storybook", "Jest"],
             siteLink: "https://iim-backrow.github.io/B3-libraryUI",
@@ -166,7 +166,7 @@ const Projects = () => {
                     showBorder={false}
                     className="custom-class"
                 >
-                    Mes Projets
+                    {t('projects.title')}
                 </GradientText>
             </h1>
 

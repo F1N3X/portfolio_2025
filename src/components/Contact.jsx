@@ -35,13 +35,13 @@ const Contact = () => {
             }  
         )
         .then(() => {
-            alert("Mail envoyé! Merci 😊");
+            alert(t('contact.form.success'));
             setName("");
             setEmail("");
             setObject("");
             setMessage("");
         }, (error) => {
-            alert("Oups ... il y a eu un problème avec ton mail 😓");
+            alert(t('contact.form.error'));
             console.log(error);
         });
     }
@@ -55,15 +55,15 @@ const Contact = () => {
                     showBorder={false}
                     className="custom-class"
                     >
-                        Me Contacter
+                        {t('contact.title')}
                 </GradientText>
             </h1>
 
             <div className="contact-content">
                 <div className="contact-info">
                     <div className="speach">
-                        <span>Prêt à collaborer sur de futurs projets ?</span>
-                        <p>Discutons ensemble !</p>
+                        <span>{t('contact.subtitle')}</span>
+                        <p>{t('contact.greeting')}</p>
                     </div>
 
                     <div className="contact-bubbles">
@@ -122,7 +122,7 @@ const Contact = () => {
                         <FloatingLabelInput
                             id="name"
                             name="name"
-                            label="Nom complet"
+                            label={t('contact.form.name')}
                             type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
@@ -131,7 +131,7 @@ const Contact = () => {
                         <FloatingLabelInput 
                             id="email"
                             name="email"
-                            label="Email"
+                            label={t('contact.form.email')}
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -140,7 +140,7 @@ const Contact = () => {
                         <FloatingLabelInput
                             id="object"
                             name="title"
-                            label="Objet"
+                            label={t('contact.form.subject')}
                             type="text"
                             value={object}
                             onChange={(e) => setObject(e.target.value)}
@@ -149,14 +149,14 @@ const Contact = () => {
                         <FloatingLabelInput
                             id="message"
                             name="message"
-                            label="Message"
+                            label={t('contact.form.message')}
                             type="textarea"
                             rows="1"
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
                         />
 
-                        <button type="submit">Envoyer</button>    
+                        <button type="submit">{t('contact.form.submit')}</button>    
                     </form>
                 </div>
             </div>

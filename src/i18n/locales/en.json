@@ -87,10 +87,10 @@
       "email": "Email",
       "subject": "Subject",
       "message": "Message",
-      "submit": "Send message",
+      "submit": "Send",
       "sending": "Sending...",
-      "success": "Message sent successfully!",
-      "error": "An error occurred. Please try again."
+      "success": "Mail sent! Thank you 😊",
+      "error": "Oops... there was a problem with your mail 😓"
     }
   }
 }

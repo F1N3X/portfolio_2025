@@ -3,44 +3,6 @@ import GradientText from '../blocks/TextAnimations/GradientText/GradientText';
 import "./About.css";
 import { useTranslation } from 'react-i18next';
 
-const parcours = [
-    {
-        titre: "Alternant Développeur .NET et Agile",
-        date: "2025 - Aujourd'hui",
-        description: "Société Générale"
-    },
-    {
-        titre: "Alternant Développeur Full Stack",
-        date: "2024 - 2025",
-        description: "Dataventure"
-    },
-    {
-        titre: "Stage IOT",
-        date: "2024",
-        description: "IIM Digital School"
-    },
-    {
-        titre: "Responsable de projet",
-        date: "2023 - 2024",
-        description: "404 De Vinci"
-    }
-];
-
-const passions = [
-    {
-        titre: "Escrime",
-        emoji: "🤺"
-    },
-    {
-        titre: "Violon",
-        emoji: "🎻"
-    },
-    {
-        titre: "Retro Gaming",
-        emoji: "👾"
-    }
-];
-
 const About = () => {
     const { t } = useTranslation();
     const primaryColor = "var(--primary-color)";
@@ -49,6 +11,44 @@ const About = () => {
     useEffect(() => {
         document.documentElement.style.setProperty('--timeline-items', parcours.length);
     }, []);
+
+    const parcours = [
+        {
+            titre: t('about.experience.exp1.title'),
+            date: t('about.experience.exp1.date'),
+            description: t('about.experience.exp1.company')
+        },
+        {
+            titre: t('about.experience.exp2.title'),
+            date: t('about.experience.exp2.date'),
+            description: t('about.experience.exp2.company')
+        },
+        {
+            titre: t('about.experience.exp3.title'),
+            date: t('about.experience.exp3.date'),
+            description: t('about.experience.exp3.company')
+        },
+        {
+            titre: t('about.experience.exp4.title'),
+            date: t('about.experience.exp4.date'),
+            description: t('about.experience.exp4.company')
+        }
+    ];
+
+    const passions = [
+        {
+            titre: t('about.hobbies.hobbie1'),
+            emoji: "🤺"
+        },
+        {
+            titre: t('about.hobbies.hobbie2'),
+            emoji: "🎻"
+        },
+        {
+            titre: t('about.hobbies.hobbie3'),
+            emoji: "👾"
+        }
+    ];
 
     return (
         <section id="about">
@@ -59,7 +59,7 @@ const About = () => {
                     showBorder={false}
                     className="custom-class"
                 >
-                    À propos de moi
+                    {t('about.title')}
                 </GradientText>
             </h1>
 
@@ -73,10 +73,10 @@ const About = () => {
                         </div>
                         <div className="about-text-grid">
                             <span className="about-short-text">
-                                Développeur web depuis plusieurs années, je cherche sans cesse à améliorer mes compétences et à relever de nouveaux défis.
+                                {t('about.description1')}
                                 <br/>
                                 <br/>
-                                Curieux, passionné et toujours prêt à apprendre, j'essaie constamment d'explorer de nouvelles technologies et de nouvelles approches.
+                                {t('about.description2')}
                             </span>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ const About = () => {
                         
                         {/* Parcours */}
                         <div className="about-timeline-grid">
-                            <h3>Mon parcours</h3>
+                            <h3>{t('about.experience.title')}</h3>
                             <ul className="timeline-list">
                                 {parcours.map((etape, idx) => (
                                     <li className="timeline-item" key={idx}>

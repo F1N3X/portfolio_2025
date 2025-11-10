@@ -45,23 +45,19 @@
     "title": "Mes projets",
     "project1": {
       "name": "Pixel War",
-      "description": "Une toile blanche où chaque utilisateur peut placer un pixel toutes les X minutes. Chat en temps réel et classement général poussent les joueurs à exprimer leur créativité.",
-      "technologies": ["React", "Express", "TypeScript"]
+      "description": "Une toile blanche où chaque utilisateur peut placer un pixel toutes les X minutes. Chat en temps réel et classement général poussent les joueurs à exprimer leur créativité."
     },
     "project2": {
       "name": "Puissance 4 en ligne",
-      "description": "Utilisation de Socket.IO pour créer un jeu de puissance 4 en temps réel qui suis les mouvements des doigts et qui détecte quand ils sont rapprochés pour valider le coup.",
-      "technologies": ["SocketIO", "Express", "TypeScript"]
+      "description": "Utilisation de Socket.IO pour créer un jeu de puissance 4 en temps réel qui suis les mouvements des doigts et qui détecte quand ils sont rapprochés pour valider le coup."
     },
     "project3": {
       "name": "Canvas",
-      "description": "Projet visant à explorer les possibilités d'un canvas au travers d'une recherche artistique sur un thème",
-      "technologies": ["JavaScript"]
+      "description": "Projet visant à explorer les possibilités d'un canvas au travers d'une recherche artistique sur un thème"
     },
     "project4": {
       "name": "Librairie UI",
-      "description": "Projet de création de librairie UI sur la base d'un travail collaboratif en mettant en place une chaîne CI/CD.",
-      "technologies": ["React", "TypeScript", "Storybook", "Jest"]
+      "description": "Projet de création de librairie UI sur la base d'un travail collaboratif en mettant en place une chaîne CI/CD."
     }
   },
   "techs": {
@@ -76,10 +72,10 @@
       "email": "Email",
       "subject": "Objet",
       "message": "Message",
-      "submit": "Envoyer le message",
+      "submit": "Envoyer",
       "sending": "Envoi en cours...",
-      "success": "Message envoyé avec succès !",
-      "error": "Une erreur s'est produite. Veuillez réessayer."
+      "success": "Mail envoyé! Merci 😊",
+      "error": "Oups ... il y a eu un problème avec ton mail 😓"
     }
   }
 }
