@@ -16,6 +16,10 @@ function App() {
   const firstDeltaRef = useRef(null)
 
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768
+    
+    if (isMobile) return
+    
     sectionsRef.current = document.querySelectorAll('section')
     
     const onWheel = (e) => {

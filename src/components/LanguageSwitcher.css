@@ -3,6 +3,7 @@
   top: 2rem;
   right: 2rem;
   z-index: 1000;
+  pointer-events: auto; /* S'assurer que les clics fonctionnent */
 }
 
 .language-select {
@@ -73,5 +74,24 @@
 
   .language-select option {
     font-size: 1.2rem;
+  }
+  
+  /* Désactiver les effets hover sur mobile */
+  .language-select:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-switcher {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .language-select {
+    padding: 0.4rem 1.75rem 0.4rem 0.6rem;
+    font-size: 1rem;
+    min-width: 55px;
+    border-width: 1.5px;
   }
 }
