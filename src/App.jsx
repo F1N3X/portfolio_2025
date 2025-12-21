@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import Projects from './components/Projects'
 import Techs from './components/Techs'
 import LanguageSwitcher from './components/LanguageSwitcher'
+import Navbar from './components/Navbar'
 
 function App() {
 
@@ -93,6 +94,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <LanguageSwitcher />
       <Hero />
       <About />
