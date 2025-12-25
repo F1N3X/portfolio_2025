@@ -84,8 +84,8 @@ const Techs = () => {
         
         const centerIndex = 0;
         const innerRingCount = 5;
-        const innerRadius = '11rem';
-        const outerRadius = '22rem';
+        const innerRadius = '10rem';
+        const outerRadius = '20rem';
 
         techs.forEach((tech, index) => {
             let transform = 'translate(-50%, -50%)';
@@ -156,7 +156,9 @@ const Techs = () => {
                 >
                   <Magnet padding={250} disabled={false} magnetStrength={8}>
                     <div className="tech-bubble-inner">
-                      <img src={tech.image} alt={tech.title} className="tech-icon" />
+                      <div className="tech-icon-bubble">
+                        <img src={tech.image} alt={tech.title} className="tech-icon" />
+                      </div>
                       <span className="tech-name">{tech.title}</span>
                     </div>
                   </Magnet>
