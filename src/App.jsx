@@ -22,6 +22,44 @@ function App() {
     if (isMobile) return
     
     sectionsRef.current = document.querySelectorAll('section')
+
+    const getViewportSectionIndex = () => {
+      const sections = sectionsRef.current
+      if (!sections || sections.length === 0) return 0
+
+      const viewportCenterY = window.innerHeight / 2
+      let candidateIndex = -1
+
+      for (let i = 0; i < sections.length; i++) {
+        const rect = sections[i].getBoundingClientRect()
+        if (rect.top <= viewportCenterY && rect.bottom >= viewportCenterY) {
+          candidateIndex = i
+          break
+        }
+      }
+
+      if (candidateIndex !== -1) return candidateIndex
+
+      // Fallback: section dont le haut est le plus proche du centre
+      let bestIndex = 0
+      let bestDistance = Number.POSITIVE_INFINITY
+      for (let i = 0; i < sections.length; i++) {
+        const rect = sections[i].getBoundingClientRect()
+        const distance = Math.abs(rect.top - viewportCenterY)
+        if (distance < bestDistance) {
+          bestDistance = distance
+          bestIndex = i
+        }
+      }
+
+      return bestIndex
+    }
+
+    const syncIndexToViewport = () => {
+      indexRef.current = getViewportSectionIndex()
+    }
+
+    syncIndexToViewport()
     
     const onWheel = (e) => {
       e.preventDefault()
@@ -43,6 +81,10 @@ function App() {
         // Activer le cooldown immédiatement pour bloquer les événements suivants
         cooldownRef.current = true
         isScrollingRef.current = true
+
+        // Important: on (re)calcule la section courante depuis la position actuelle.
+        // Sinon, après un clic sur une ancre éloignée, indexRef peut être obsolète.
+        syncIndexToViewport()
         
         const direction = Math.sign(e.deltaY)
         const newIndex = Math.min(
