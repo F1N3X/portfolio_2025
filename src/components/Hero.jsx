@@ -50,7 +50,7 @@ const Hero = () => {
                     </a>
 
                     <a
-                        href="mailto:quentin.garnier@email.com"
+                        href="mailto:quentingarnier92320@gmail.com"
                         className="hero-link"
                         target="_blank"
                     >
